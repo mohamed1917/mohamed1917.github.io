@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساب نسبة الترم الثالث</title>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .calculator-container {
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator {
+        text-align: center;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #term3Result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .center {
+        text-align: center;
+    }
+</style>
+</head>
+<body dir="rtl">
+
+<div class="calculator-container">
+    <div class="center">
+        
+        <img src="imag/vecteezy_abstract-background-design-background-texture-design-with_18752867-1.jpg" width="=350" height="270">
+        <h4>تصميم الطالب محمد محمود المخلف</h4>
+    </div>
+
+    <h2 class="calculator">حاسبة الدرجات</h2>
+
+    <!-- Input boxes -->
+    <div class="calculator">
+        <label for="term1">نسبة الترم الأول:</label>
+        <input type="number" id="term1" step="any" min="100">
+        <br><br>
+
+        <label for="term2">نسبة الترم الثاني:</label>
+        <input type="number" id="term2" step="any" min="100">
+        <br><br>
+
+        <label for="cumulative">النسبة التراكمية:</label>
+        <input type="number" id="cumulative" step="any" min="100">
+        <br><br>
+
+        <!-- Calculate button -->
+        <button onclick="calculate()">احسب</button>
+        <br><br>
+
+        <!-- Display Term 3 Percentage -->
+        <div id="term3Result"></div>
+    </div>
+</div>
+
+<!-- Script to calculate -->
+<script>
+    function calculate() {
+        var term1 = parseFloat(document.getElementById("term1").value);
+        var term2 = parseFloat(document.getElementById("term2").value);
+        var cumulative = parseFloat(document.getElementById("cumulative").value);
+
+        // Step 1
+        var result1 = term1 * 0.25;
+
+        // Step 2
+        var result2 = term2 * 0.35;
+
+        // Step 3
+        var cumulativeResult = result1 + result2;
+
+        // Step 4
+        var result4 = cumulative - cumulativeResult;
+
+        // Step 5
+        var term3 = result4 / 0.40;
+
+        // Display result
+        document.getElementById("term3Result").innerHTML = "<p>نسبة الترم الثالث: " + term3.toFixed(2) + "</p>"; // Round to 2 decimal places
+    }
+</script>
+
+</body>
+</html>
